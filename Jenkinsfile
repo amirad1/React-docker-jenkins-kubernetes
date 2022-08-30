@@ -3,7 +3,7 @@ pipeline {
   stages{
     stage('test'){
       steps{
-        echo "hello there"
+        sh 'docker build -t react .'
       }
     }
   }
