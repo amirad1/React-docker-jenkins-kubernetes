@@ -14,14 +14,14 @@ pipeline {
     }
     stage('Push image'){
           steps{
-            sh '''docker tag react amirad1/react:10
-            docker push amirad1/react:10'''
+            sh '''docker tag react <imagename>
+            docker push <imagename>'''
       }
     }
     stage('Deploy'){
       steps{
         sh '''kubectl apply -f master-deployment.yaml
-              kubectl rollout restart deployment emy
+              kubectl rollout restart deployment second-app-deployment
         '''
     }
     }
